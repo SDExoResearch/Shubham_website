@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home - Your Name</title>
+  <title>Home - Shubham's Research</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
     header { background: #282c34; padding: 1rem; }
@@ -14,7 +14,6 @@
     h1 { color: #222; }
     p { margin: 1rem 0; }
 
-    /* Image gallery styles */
     .gallery {
       display: flex;
       gap: 15px;
@@ -36,9 +35,8 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
 
-    /* Modal styles */
     .modal {
-      display: none; /* Hidden by default */
+      display: none; 
       position: fixed; 
       z-index: 1000; 
       padding-top: 60px; 
@@ -86,17 +84,16 @@
 </header>
 
 <main>
-  <h1>Welcome to My Website</h1>
+  <h1>Welcome to Shubham's Research Website</h1>
   <p>This is the homepage of your research website. You can navigate to other pages using the menu above.</p>
 
   <h2>Explore Exoplanets</h2>
   <div class="gallery">
-    <img src="images/planet1.jpg" alt="Exoplanet 1" onclick="openModal(this)" />
-    <img src="images/planet2.jpg" alt="Exoplanet 2" onclick="openModal(this)" />
-    <img src="images/planet3.jpg" alt="Exoplanet 3" onclick="openModal(this)" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/HD_209458_b_artist%27s_impression.jpg" alt="Exoplanet HD 209458 b" onclick="openModal(this)" />
+    <img src="https://exoplanets.nasa.gov/system/resources/detail_files/2571_Kepler-186f.png" alt="Exoplanet Kepler-186f" onclick="openModal(this)" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Corot-7b_orbit.svg/1024px-Corot-7b_orbit.svg.png" alt="Exoplanet Corot-7b" onclick="openModal(this)" />
   </div>
 
-  <!-- The Modal -->
   <div id="myModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="modalImg" />
@@ -105,23 +102,17 @@
 </main>
 
 <script>
-  // Open modal and show clicked image + caption
   function openModal(img) {
     document.getElementById("myModal").style.display = "block";
     document.getElementById("modalImg").src = img.src;
     document.getElementById("caption").innerText = img.alt;
   }
-
-  // Close modal
   function closeModal() {
     document.getElementById("myModal").style.display = "none";
   }
-
-  // Also close modal if user clicks outside image
   window.onclick = function(event) {
-    const modal = document.getElementById("myModal");
-    if (event.target === modal) {
-      modal.style.display = "none";
+    if (event.target === document.getElementById("myModal")) {
+      closeModal();
     }
   }
 </script>
